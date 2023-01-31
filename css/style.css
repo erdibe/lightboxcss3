@@ -1,0 +1,144 @@
+/* font style */
+@font-face {
+  font-family: "Bebasneue";
+  src: url("../fonts/BebasNeue-Regular.woff") format("woff");
+}
+
+/* style */
+
+body {
+  font: 18px/36px "Bebasneue", "arial narrow", arial, sans-serif;
+  background-image: url("../img/background/background.png");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 100px;
+  margin: 50px 0px;
+  margin-top: 150px;
+  text-align: center;
+  color: red;
+  /* text-shadow: 0 0 10px #66cdaa; */
+  /* text-shadow: 0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e; */
+  text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+h2 {
+  width: 800px;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 800px;
+  /* background-color: #eee; */
+  margin: auto;
+  padding: 50px;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); */
+  border-radius: 10px;
+}
+
+.gallery li,
+.gallery li span {
+  border-radius: 50%;
+}
+
+.gallery li {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  border: 5px solid #66cdaa;
+  float: left;
+  margin: 65px;
+  margin-top: -20px;
+  position: relative;
+}
+
+.gallery li img {
+  position: absolute;
+}
+
+.gallery li span {
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(200, 200, 200, 0.5);
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+  line-height: 120px;
+  color: #66cdaa;
+  text-shadow: 1px 1px black;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.gallery li a:hover span {
+  opacity: 1;
+}
+
+/* overlay */
+.overlay {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  transition: 0.8s;
+  padding: 50px;
+  padding-top: 150px;
+  padding-left: 350px;
+  opacity: 0;
+}
+
+.overlay:target {
+  width: auto;
+  height: auto;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+}
+
+.overlay img {
+  max-height: 100%;
+}
+
+.overlay:target img {
+  animation: zoomandfade 1s forwards;
+}
+
+.close {
+  position: absolute;
+  top: 120px;
+  padding-left: 50%;
+  color: white;
+  transition: 0.5s;
+}
+
+.close:hover {
+  color: red;
+}
+
+/* animasi */
+@keyframes zoomandfade {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
